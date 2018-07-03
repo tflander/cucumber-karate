@@ -9,6 +9,5 @@ Feature: Testing a REST API
     When method get
     Then status 200
     * def expectedResponse = read('classpath:expectedResponse/retrieveTodoForUser.js')
-    * set response[0].targetDate = '2018-07-02'
-    * set response[1].targetDate = '2018-07-02'
+    * set response[*].targetDate = 'replacement for today'
         And match response == expectedResponse
